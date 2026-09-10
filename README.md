@@ -1,148 +1,68 @@
 # 🏠 RealEstate – Property Discovery Platform
 
-A modern and responsive **Real Estate Property Discovery Platform** developed as a Full Stack Development project. The application provides an intuitive interface for users to discover properties, apply filters, save favourite properties, view property details, and list their own properties.
+[![CI Pipeline](https://github.com/skit-devops-2026/devops-24ESKCS019/actions/workflows/ci.yml/badge.svg)](https://github.com/skit-devops-2026/devops-24ESKCS019/actions/workflows/ci.yml)
+[![Repository Status](https://img.shields.io/badge/DevOps-MT1%20Completed-brightgreen)](https://github.com/skit-devops-2026/devops-24ESKCS019)
+
+A modern and responsive **Real Estate Property Discovery Platform** developed as part of the DevOps Course (Modules 1–4). The application provides an intuitive interface for users to discover properties, apply filters, save favourite properties, view detailed property cards, and list new properties.
+
+---
 
 ## 🌐 Live Repository
 
-[GitHub Repository](https://github.com/Aditya-050306/FSD_Project.git)
+- **Repository URL**: [https://github.com/skit-devops-2026/devops-24ESKCS019](https://github.com/skit-devops-2026/devops-24ESKCS019)
+- **Course**: DevOps (24ESKCS019)
 
 ---
 
 ## 📌 Project Overview
 
-**RealEstate** is a web-based property discovery platform designed to simplify the process of searching and exploring residential and commercial properties.
+**RealEstate** is a web-based property discovery platform designed to simplify searching and exploring residential and commercial properties.
 
-The platform provides users with a clean and modern interface where they can:
-
-* 🔍 Search properties by location
-* 🏢 Filter properties by type
-* 💰 Filter properties according to price
-* 🛏️ Filter properties by BHK
-* 🛋️ Filter properties based on furnishing
-* ❤️ Save properties to a wishlist
-* 📋 View detailed property information
-* 🏡 List a new property
-* 🔐 Login and register accounts
-* 📱 Switch between Grid and List views
-* 🗺️ Explore properties through a map interface
-* 🎥 View virtual property tours
-
----
-
-## ✨ Features
-
-### 🔎 Property Search
-
-Users can search for properties based on:
-
-* Location
-* Property type
-* Price range
-* Number of bedrooms
-* Furnishing status
-
-### 🏘️ Property Categories
-
-Properties are organized into different categories:
-
-* 🏢 Flats / Apartments
-* 🏡 Villas
-* 🏙️ Penthouses
-* 🏬 Commercial Properties
-
-### ❤️ Wishlist
-
-Users can save their favourite properties and access them through the wishlist button in the navigation bar.
-
-### 🔐 Authentication
-
-The application contains user authentication interfaces for:
-
-* Sign In
-* Create Account
-* Buyer / Tenant accounts
-* Agent / Owner accounts
-* Remember Me
-* Forgot Password interface
-* Google and Apple login UI
-
-### 📝 List Your Property
-
-Property owners and agents can submit new property listings by providing:
-
-* Property title
-* Property type
-* Price
-* Number of bedrooms
-* Area
-* City and address
-
-### 📊 Multiple Views
-
-Users can switch between:
-
-* **Grid View**
-* **List View**
-* **Map View**
-
-### 🎥 Virtual Tours
-
-The platform includes a virtual-tour interface that allows users to view property-related video content.
-
-### 📱 Responsive Design
-
-The interface is designed to provide a consistent experience across desktop, tablet, and mobile screen sizes.
+Key Features:
+- 🔍 **Search Properties** by location, keyword, or title.
+- 🏢 **Filter Properties** by type (Apartments, Villas, Penthouses, Commercial).
+- 💰 **Filter by Price Range** and bedroom count (BHK).
+- 🛋️ **Furnishing Status Filters** (Furnished, Semi-Furnished, Unfurnished).
+- ❤️ **Wishlist Integration** to save favourite properties.
+- 📋 **Property Details View** with complete metadata.
+- 🏡 **Submit Property Listings** through an interactive modal.
+- 🔐 **Authentication UI** for Sign In, Account Creation, and Password Reset.
+- 📱 **Multiple Layout Views** (Grid View, List View, and Map View).
+- 🎥 **Virtual Property Tours** modal support.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology   | Purpose                             |
-| ------------ | ----------------------------------- |
-| HTML5        | Structure of the web application    |
-| CSS3         | Styling and responsive design       |
-| JavaScript   | Application logic and interactivity |
-| Font Awesome | Icons                               |
-| Google Fonts | Typography                          |
-| Unsplash     | Property imagery                    |
+| Technology / Tool | Purpose |
+| ----------------- | ------- |
+| **HTML5 & CSS3**  | Structured markups, responsive styling, flex/grid layouts |
+| **JavaScript (ES6+)** | Frontend application logic, DOM manipulation, state management |
+| **Python & unittest** | Automated unit testing framework for project validation |
+| **GitHub Actions** | Automated CI pipeline for continuous integration testing |
+| **Jenkins**       | Declarative Jenkinsfile pipeline automation |
+| **Font Awesome & Google Fonts** | UI icons and modern typography |
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-FSD_Project/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+devops-24ESKCS019/
+├── .github/
+│   └── workflows/
+│       └── ci.yml          # GitHub Actions CI Workflow
+├── tests/
+│   ├── __init__.py
+│   ├── test_properties.py # Unit tests for application logic & data
+│   └── test_html_structure.py # Unit tests for DOM & HTML metadata
+├── index.html              # Main frontend HTML markup
+├── style.css               # Application stylesheet
+├── script.js               # Interactive JavaScript logic
+├── Jenkinsfile             # Jenkins Declarative CI/CD Pipeline
+├── .gitignore              # Ignored files and build artifacts
+└── README.md               # Project documentation
 ```
-
-### `index.html`
-
-Contains the complete structure of the website including:
-
-* Navigation bar
-* Hero section
-* Search interface
-* Property section
-* Filters
-* Categories
-* Features
-* Authentication modal
-* Property listing modal
-* Property details modal
-* Video modal
-* Footer
-
-### `style.css`
-
-Contains the visual design and responsive styling of the application.
-
-### `script.js`
-
-Handles the interactive functionality of the website, including property rendering, filtering, sorting, wishlist operations, authentication UI, modals, and view switching.
 
 ---
 
@@ -151,154 +71,61 @@ Handles the interactive functionality of the website, including property renderi
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Aditya-050306/FSD_Project.git
+git clone https://github.com/skit-devops-2026/devops-24ESKCS019.git
+cd devops-24ESKCS019
 ```
 
-### 2. Navigate to the Project
+### 2. Run the Web Application
+
+Since this is a client-side frontend project, open `index.html` in any modern web browser or run using VS Code Live Server / Python HTTP server:
 
 ```bash
-cd FSD_Project
+# Using Python builtin HTTP server
+python -m http.server 8000
 ```
 
-### 3. Run the Project
+Then visit `http://localhost:8000` in your web browser.
 
-Since this is a frontend project, you can simply open:
+---
 
-```text
-index.html
+## 🧪 Running Automated Tests
+
+The repository includes an automated Python test suite under the `tests/` directory:
+
+```bash
+# Run unit tests locally
+python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-in your web browser.
-
-Alternatively, you can use **VS Code Live Server**.
-
-### Using Live Server
-
-1. Open the project in VS Code.
-2. Install the **Live Server** extension.
-3. Right-click on `index.html`.
-4. Select **Open with Live Server**.
+All tests execute automatically on every push and pull request via **GitHub Actions CI**.
 
 ---
 
-## 🎯 Project Objectives
+## ⚙️ CI/CD & Automation Pipelines
 
-The main objectives of this project are:
+### GitHub Actions CI Pipeline (`.github/workflows/ci.yml`)
+- Triggers automatically on `push` and `pull_request` to `main` and feature branches.
+- Sets up Python environment, verifies dependencies, and executes unit test suite.
 
-1. To develop a modern real estate website.
-2. To implement interactive frontend functionality using JavaScript.
-3. To provide an efficient property search experience.
-4. To implement filtering and sorting mechanisms.
-5. To create reusable and interactive UI components.
-6. To implement authentication and property listing interfaces.
-7. To create a responsive and user-friendly design.
-8. To demonstrate practical Full Stack Development concepts.
-
----
-
-## 🔄 Application Workflow
-
-```text
-                    ┌─────────────────┐
-                    │   User Visits   │
-                    │     Website     │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  Search / Browse│
-                    │    Properties   │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ Apply Filters   │
-                    │ Location/Price  │
-                    │ BHK/Type/etc.   │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ View Properties │
-                    └────────┬────────┘
-                             │
-              ┌──────────────┼──────────────┐
-              ▼              ▼              ▼
-        ┌──────────┐   ┌───────────┐   ┌──────────┐
-        │ Wishlist │   │  Details  │   │ Virtual  │
-        │          │   │   View    │   │   Tour   │
-        └──────────┘   └───────────┘   └──────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ Login/Register  │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ List Property   │
-                    └─────────────────┘
-```
+### Jenkins Pipeline (`Jenkinsfile`)
+- Declarative pipeline with standard stages:
+  1. **Checkout**: Retrieves source code.
+  2. **Environment & Setup**: Verifies tool versions and workspace setup.
+  3. **Lint & Validation**: Validates file integrity and HTML structure.
+  4. **Automated Unit Tests**: Runs the test suite via `python -m unittest`.
+  5. **Build Artifacts**: Prepares build bundle summary.
 
 ---
 
-## 💡 Key Learning Outcomes
+## 👨‍💻 Author & Course Information
 
-Through this project, the following concepts were implemented:
-
-* HTML semantic structure
-* CSS layouts and responsive design
-* JavaScript DOM manipulation
-* Event handling
-* Form handling
-* Search functionality
-* Filtering and sorting
-* Modal windows
-* Dynamic content generation
-* Wishlist management
-* UI state management
-* Responsive web design
-* Frontend project organization
-* Git and GitHub version control
-
----
-
-## 🔮 Future Enhancements
-
-The project can be further improved by adding:
-
-* [ ] Backend using Node.js and Express.js
-* [ ] MongoDB database
-* [ ] Real user authentication
-* [ ] JWT-based authorization
-* [ ] Google OAuth authentication
-* [ ] Real-time property listings
-* [ ] Google Maps / Mapbox integration
-* [ ] Property image uploads
-* [ ] Agent dashboard
-* [ ] User dashboard
-* [ ] Property booking system
-* [ ] Online enquiry system
-* [ ] Payment integration
-* [ ] Admin panel
-* [ ] Cloud deployment
-* [ ] REST API integration
-
----
-
-## 👨‍💻 Authors
-* **Aayush Krishniya**
-* **Aditya Joshi**
-* **Akshat Gupta**
-
-### Full Stack Development Project
+- **Student / Author**: Aditya Joshi
+- **Repository Owner**: `skit-devops-2026`
+- **Course**: DevOps (24ESKCS019)
+- **Assignment**: MT1 (Modules 1–4)
 
 ---
 
 ## 📄 License
 
-This project was developed for educational and academic purposes.
-
----
-
-⭐ If you found this project useful, consider giving the repository a star!
+Developed for academic and educational evaluation.
