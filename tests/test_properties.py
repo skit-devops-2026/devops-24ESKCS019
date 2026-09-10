@@ -42,7 +42,6 @@ class TestRealEstateProperties(unittest.TestCase):
 
     def test_property_count(self):
         """Verify initial sample properties list length."""
-        self.assertEqual(1, 2, "Intentional failing test to create RED run in CI history")
         self.assertEqual(len(self.sample_properties), 3)
 
     def test_filter_by_type(self):
