@@ -1,0 +1,31 @@
+{
+  "name": "devops-24eskcs019",
+  "version": "1.0.0",
+  "description": "RealEstate - Property Discovery Platform developed for DevOps Course (24ESKCS019)",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "python -m unittest discover -s tests -p \"test_*.py\" -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skit-devops-2026/devops-24ESKCS019.git"
+  },
+  "keywords": [
+    "real-estate",
+    "property-discovery",
+    "devops",
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": "Aditya Joshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skit-devops-2026/devops-24ESKCS019/issues"
+  },
+  "homepage": "https://github.com/skit-devops-2026/devops-24ESKCS019#readme"
+}

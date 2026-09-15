@@ -60,6 +60,8 @@ devops-24ESKCS019/
 ├── style.css               # Application stylesheet
 ├── script.js               # Interactive JavaScript logic
 ├── Jenkinsfile             # Jenkins Declarative CI/CD Pipeline
+├── package.json            # Project metadata and run/test scripts
+├── LICENSE                 # MIT License details
 ├── .gitignore              # Ignored files and build artifacts
 └── README.md               # Project documentation
 ```
@@ -128,4 +130,4 @@ All tests execute automatically on every push and pull request via **GitHub Acti
 
 ## 📄 License
 
-Developed for academic and educational evaluation.
+This project is licensed under the [MIT License](LICENSE).
