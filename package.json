@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "python -m unittest discover -s tests -p \"test_*.py\" -v"
+    "test": "node test.js"
   },
   "dependencies": {
     "express": "^4.19.2",
