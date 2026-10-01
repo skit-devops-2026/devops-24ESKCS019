@@ -7,6 +7,14 @@ A modern and responsive **Real Estate Property Discovery Platform** developed as
 
 ---
 
+## 🚀 Live Demo
+
+- **Deployed Application URL**: [https://devops-24eskcs019.onrender.com](https://devops-24eskcs019.onrender.com)
+- **Prometheus Metrics Endpoint**: [https://devops-24eskcs019.onrender.com/metrics](https://devops-24eskcs019.onrender.com/metrics)
+- **Health Endpoint**: [https://devops-24eskcs019.onrender.com/health](https://devops-24eskcs019.onrender.com/health)
+
+---
+
 ## 🌐 Live Repository
 
 - **Repository URL**: [https://github.com/skit-devops-2026/devops-24ESKCS019](https://github.com/skit-devops-2026/devops-24ESKCS019)
