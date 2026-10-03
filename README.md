@@ -132,10 +132,37 @@ All tests execute automatically on every push and pull request via **GitHub Acti
 - **Student / Author**: Aditya Joshi
 - **Repository Owner**: `skit-devops-2026`
 - **Course**: DevOps (24ESKCS019)
-- **Assignment**: MT1 (Modules 1–4)
+- **Assignment**: Mid-Term 2 (Modules 5–7: Containerization & Kubernetes Orchestration)
+
+---
+
+## 🐳 Mid-Term 2 Deployment & Kubernetes Guide
+
+### 1. Docker Image Build & Push
+```powershell
+docker login -u adityajoshi
+docker build -t adityajoshi/devops-24eskcs019:latest .
+docker push adityajoshi/devops-24eskcs019:latest
+```
+
+### 2. Deploy to Kubernetes
+```powershell
+kubectl apply -f k8s/mongo.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+```
+
+### 3. Verify Cluster & Live Endpoint
+```powershell
+kubectl get pods
+kubectl get deployments
+kubectl get services
+curl http://localhost:5000/health
+```
 
 ---
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+
