@@ -9,15 +9,20 @@ A modern and responsive **Real Estate Property Discovery Platform** developed as
 
 ## 🚀 Live Demo
 
-- **Deployed Application URL**: [https://devops-24eskcs019.onrender.com](https://devops-24eskcs019.onrender.com)
-- **Prometheus Metrics Endpoint**: [https://devops-24eskcs019.onrender.com/metrics](https://devops-24eskcs019.onrender.com/metrics)
-- **Health Endpoint**: [https://devops-24eskcs019.onrender.com/health](https://devops-24eskcs019.onrender.com/health)
+- **Primary Deployed Application URL (GitHub Pages)**: [https://skit-devops-2026.github.io/devops-24ESKCS019/](https://skit-devops-2026.github.io/devops-24ESKCS019/)
+- **Vercel API & Live Application**: [https://devops-24eskcs019.vercel.app](https://devops-24eskcs019.vercel.app)
+- **Render Deployment URL**: [https://devops-24eskcs019.onrender.com](https://devops-24eskcs019.onrender.com)
+- **Health Endpoint**: [https://devops-24eskcs019.vercel.app/health](https://devops-24eskcs019.vercel.app/health)
+- **Prometheus Metrics Endpoint**: [https://devops-24eskcs019.vercel.app/metrics](https://devops-24eskcs019.vercel.app/metrics)
 
 ---
 
-## 🌐 Live Repository
+## 🌐 Live Repository & Container Registry
 
 - **Repository URL**: [https://github.com/skit-devops-2026/devops-24ESKCS019](https://github.com/skit-devops-2026/devops-24ESKCS019)
+- **GitHub Container Registry (GHCR) Package**: [https://github.com/skit-devops-2026/devops-24ESKCS019/pkgs/container/devops-24eskcs019](https://github.com/skit-devops-2026/devops-24ESKCS019/pkgs/container/devops-24eskcs019)
+- **Container Registry Image Tag**: `ghcr.io/skit-devops-2026/devops-24eskcs019:latest`
+- **Docker Hub Repository**: `adityajoshi/devops-24eskcs019:latest`
 - **Course**: DevOps (24ESKCS019)
 
 ---
@@ -138,10 +143,17 @@ All tests execute automatically on every push and pull request via **GitHub Acti
 
 ## 🐳 Mid-Term 2 Deployment & Kubernetes Guide
 
-### 1. Docker Image Build & Push
+### 1. Docker Image Build & Push (GHCR & Docker Hub)
 ```powershell
-docker login -u adityajoshi
-docker build -t adityajoshi/devops-24eskcs019:latest .
+# Build Docker Image
+docker build -t devops-24eskcs019:latest .
+
+# Tag & Push to GitHub Container Registry (GHCR)
+docker tag devops-24eskcs019:latest ghcr.io/skit-devops-2026/devops-24eskcs019:latest
+docker push ghcr.io/skit-devops-2026/devops-24eskcs019:latest
+
+# Tag & Push to Docker Hub
+docker tag devops-24eskcs019:latest adityajoshi/devops-24eskcs019:latest
 docker push adityajoshi/devops-24eskcs019:latest
 ```
 

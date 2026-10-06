@@ -3,13 +3,15 @@ name: Docker CI
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
   packages: write
 
 jobs:
-  build-and-test:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,23 +19,42 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build the Docker image
-        run: docker build -t todo-practice .
+        run: docker build -t devops-24eskcs019 .
 
       - name: Run tests inside the container
-        run: docker run --rm todo-practice npm test
-
-      - name: Tag the image with the commit SHA
-        run: docker tag todo-practice todo-practice:${{ github.sha }}
+        run: docker run --rm devops-24eskcs019 python -m unittest discover -s tests -p "test_*.py" -v
 
       - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Tag for GHCR
+      - name: Tag and Push to GHCR
+        if: github.event_name != 'pull_request'
         run: |
+          IMAGE_NAME="devops-24eskcs019"
+          REPO_FULL=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker tag todo-practice ghcr.io/${REPO_OWNER}/todo-practice:${{ github.sha }}
 
-      - name: Push to GHCR
+          # Tag for ghcr.io/skit-devops-2026/devops-24eskcs019
+          docker tag ${IMAGE_NAME} ghcr.io/${REPO_FULL}:latest
+          docker tag ${IMAGE_NAME} ghcr.io/${REPO_FULL}:${{ github.sha }}
+
+          # Tag for ghcr.io/owner/devops-24eskcs019
+          docker tag ${IMAGE_NAME} ghcr.io/${REPO_OWNER}/${IMAGE_NAME}:latest
+          docker tag ${IMAGE_NAME} ghcr.io/${REPO_OWNER}/${IMAGE_NAME}:${{ github.sha }}
+
+          # Push all tags to GHCR
+          docker push ghcr.io/${REPO_FULL}:latest
+          docker push ghcr.io/${REPO_FULL}:${{ github.sha }}
+          docker push ghcr.io/${REPO_OWNER}/${IMAGE_NAME}:latest
+          docker push ghcr.io/${REPO_OWNER}/${IMAGE_NAME}:${{ github.sha }}
+
+      - name: Log in to Docker Hub (Optional)
+        if: github.event_name != 'pull_request' && secrets.DOCKERHUB_USERNAME != ''
         run: |
-          REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker push ghcr.io/${REPO_OWNER}/todo-practice:${{ github.sha }}
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          docker tag devops-24eskcs019 "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:latest"
+          docker tag devops-24eskcs019 "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:${{ github.sha }}"
+          docker push "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:latest"
+          docker push "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:${{ github.sha }}"
+
