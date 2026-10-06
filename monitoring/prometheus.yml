@@ -1,0 +1,14 @@
+# Prometheus Configuration for RealEstate / DevOps Node Application
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "node-app"
+    scrape_interval: 5s
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["app:5000", "localhost:5000"]
+        labels:
+          environment: "production"
+          service: "realestate-todo-api"
