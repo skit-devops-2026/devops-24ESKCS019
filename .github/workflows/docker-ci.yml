@@ -22,7 +22,7 @@ jobs:
         run: docker build -t devops-24eskcs019 .
 
       - name: Run tests inside the container
-        run: docker run --rm devops-24eskcs019 python -m unittest discover -s tests -p "test_*.py" -v
+        run: docker run --rm devops-24eskcs019 npm test
 
       - name: Log in to GitHub Container Registry
         if: github.event_name != 'pull_request'
