@@ -1,14 +1,26 @@
-# Prometheus Configuration for RealEstate / DevOps Node Application
+# Prometheus Configuration for RealEstate / DevOps Node.js Application
+# Scrapes metrics from the /metrics endpoint exposed by server.js (prom-client)
+
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
+  external_labels:
+    environment: "production"
+    project: "devops-24eskcs019"
 
 scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: "prometheus"
+    scrape_interval: 30s
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Scrape the Node.js application metrics endpoint
   - job_name: "node-app"
     scrape_interval: 5s
     metrics_path: "/metrics"
     static_configs:
-      - targets: ["app:5000", "localhost:5000"]
+      - targets: ["app:5000"]
         labels:
-          environment: "production"
           service: "realestate-todo-api"
+          container: "devops-app"

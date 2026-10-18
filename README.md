@@ -9,11 +9,15 @@ A modern and responsive **Real Estate Property Discovery Platform** developed as
 
 ## 🚀 Live Demo
 
-- **Primary Deployed Application URL (GitHub Pages)**: [https://skit-devops-2026.github.io/devops-24ESKCS019/](https://skit-devops-2026.github.io/devops-24ESKCS019/)
-- **Vercel API & Live Application**: [https://devops-24eskcs019.vercel.app](https://devops-24eskcs019.vercel.app)
-- **Render Deployment URL**: [https://devops-24eskcs019.onrender.com](https://devops-24eskcs019.onrender.com)
-- **Health Endpoint**: [https://devops-24eskcs019.vercel.app/health](https://devops-24eskcs019.vercel.app/health)
-- **Prometheus Metrics Endpoint**: [https://devops-24eskcs019.vercel.app/metrics](https://devops-24eskcs019.vercel.app/metrics)
+**Primary Live URL**: [https://devops-24eskcs019.onrender.com](https://devops-24eskcs019.onrender.com)
+
+| Endpoint | URL |
+|---|---|
+| Live Application (Render) | https://devops-24eskcs019.onrender.com |
+| Live Application (Vercel) | https://devops-24eskcs019.vercel.app |
+| GitHub Pages (Static) | https://skit-devops-2026.github.io/devops-24ESKCS019/ |
+| Health Check | https://devops-24eskcs019.onrender.com/health |
+| Prometheus Metrics | https://devops-24eskcs019.onrender.com/metrics |
 
 ---
 
@@ -64,19 +68,32 @@ Key Features:
 devops-24ESKCS019/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml          # GitHub Actions CI Workflow
+│       ├── ci.yml              # GitHub Actions CI Workflow
+│       ├── docker-ci.yml       # Docker build & push to GHCR/Docker Hub
+│       └── deploy-pages.yml    # GitHub Pages deployment
+├── k8s/
+│   ├── deployment.yaml         # Kubernetes Deployment (GHCR image, 2 replicas)
+│   ├── service.yaml            # Kubernetes NodePort Service (port 30005)
+│   └── mongo.yaml              # MongoDB Deployment + PVC + ClusterIP Service
+├── monitoring/
+│   ├── prometheus.yml          # Prometheus scrape config for /metrics endpoint
+│   ├── dashboard.json          # Grafana dashboard (7 panels: status, CPU, memory, requests)
+│   └── grafana-provisioning/   # Auto-provisioned datasource & dashboard for Grafana
+├── docs/
+│   ├── deployment.png          # Screenshot: live deployment proof
+│   └── kubernetes-pods.png     # Screenshot: kubectl get pods output
 ├── tests/
-│   ├── __init__.py
-│   ├── test_properties.py # Unit tests for application logic & data
-│   └── test_html_structure.py # Unit tests for DOM & HTML metadata
-├── index.html              # Main frontend HTML markup
-├── style.css               # Application stylesheet
-├── script.js               # Interactive JavaScript logic
-├── Jenkinsfile             # Jenkins Declarative CI/CD Pipeline
-├── package.json            # Project metadata and run/test scripts
-├── LICENSE                 # MIT License details
-├── .gitignore              # Ignored files and build artifacts
-└── README.md               # Project documentation
+│   ├── test_properties.py      # Unit tests for application logic
+│   └── test_html_structure.py  # Unit tests for HTML metadata
+├── Dockerfile                  # Production Node.js Docker image (node:20-alpine)
+├── docker-compose.yml          # Multi-service compose: app + MongoDB + Prometheus + Grafana
+├── index.html                  # Main frontend HTML
+├── style.css                   # Application stylesheet
+├── script.js                   # Frontend JavaScript logic
+├── server.js                   # Express backend server
+├── Jenkinsfile                 # Jenkins Declarative CI/CD Pipeline
+├── package.json                # Node.js dependencies and npm scripts
+└── README.md                   # Project documentation
 ```
 
 ---
