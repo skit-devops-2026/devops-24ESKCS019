@@ -50,11 +50,14 @@ jobs:
           docker push ghcr.io/${REPO_OWNER}/${IMAGE_NAME}:${{ github.sha }}
 
       - name: Log in to Docker Hub (Optional)
-        if: github.event_name != 'pull_request' && secrets.DOCKERHUB_USERNAME != ''
+        if: github.event_name != 'pull_request' && env.DOCKERHUB_USERNAME != ''
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-          docker tag devops-24eskcs019 "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:latest"
-          docker tag devops-24eskcs019 "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:${{ github.sha }}"
-          docker push "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:latest"
-          docker push "${{ secrets.DOCKERHUB_USERNAME }}/devops-24eskcs019:${{ github.sha }}"
+          echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+          docker tag devops-24eskcs019 "$DOCKERHUB_USERNAME/devops-24eskcs019:latest"
+          docker tag devops-24eskcs019 "$DOCKERHUB_USERNAME/devops-24eskcs019:${{ github.sha }}"
+          docker push "$DOCKERHUB_USERNAME/devops-24eskcs019:latest"
+          docker push "$DOCKERHUB_USERNAME/devops-24eskcs019:${{ github.sha }}"
 
